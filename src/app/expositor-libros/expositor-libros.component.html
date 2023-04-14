@@ -1,0 +1,31 @@
+<h2>Bienvenido al expositor</h2>
+<p>El modo actual es: {{modoElegido}} </p>
+<div *ngIf="modoElegido === 'Comprar'">
+    <p>Carrito</p>
+    <p> 0 unidades compradas</p>
+</div>
+<pre *ngFor="let libro of librosOfrecidos">
+    {{libro | json}}
+</pre>
+
+<button (click)="cambiaLibro()">Cambiar</button>
+
+<div class="cards">
+    <mat-card *ngFor="let libro of librosOfrecidos">
+        <mat-card-header>
+            <mat-card-title>Título: {{libro.titulo | uppercase}}</mat-card-title>
+            <mat-card-subtitle>Autor: {{libro.autor}}</mat-card-subtitle>
+            <mat-card-subtitle>Stock: {{libro.stock}}</mat-card-subtitle>
+            <mat-card-subtitle>Precio: {{libro.precio}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Comprar</button>
+            <button mat-raised-button color="accent">Añadir</button>
+            <button mat-raised-button color="warn">Restar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+
+<button (click)="cambiarModo('Comprar')">Comprar</button>
+<button (click)="cambiarModo('Consultar')">Consultar</button>

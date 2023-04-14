@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ExpositorLibrosComponent } from './expositor-libros/expositor-libros.component';
+import { CreacionLibroComponent } from './creacion-libro/creacion-libro.component';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'expositor', component: ExpositorLibrosComponent, title: 'Expositor de libros' },
+  {
+    path: 'creacion',
+    component: CreacionLibroComponent,
+    title: 'Creación de libros',
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    title: 'Iniciar sesión'
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
