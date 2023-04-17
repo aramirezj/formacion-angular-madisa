@@ -6,7 +6,11 @@ import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'expositor', component: ExpositorLibrosComponent, title: 'Expositor de libros' },
+  {
+    path: 'expositor',
+    component: ExpositorLibrosComponent,
+    title: 'Expositor de libros'
+  },
   {
     path: 'creacion',
     component: CreacionLibroComponent,

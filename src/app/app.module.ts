@@ -10,20 +10,36 @@ import { MatButtonModule } from '@angular/material/button';
 import { CreacionLibroComponent } from './creacion-libro/creacion-libro.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CartaLibroComponent } from './carta-libro/carta-libro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpositorLibrosComponent,
     CreacionLibroComponent,
-    LoginComponent
+    LoginComponent,
+    CartaLibroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
+    MatInputModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

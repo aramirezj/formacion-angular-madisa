@@ -9,9 +9,8 @@ import { Libro } from '../interfaces/Libro';
 export class ExpositorLibrosComponent {
 
   modoElegido: string = 'Consultar';
-
-
   librosOfrecidos: Libro[] = [];
+  librosComprados: Libro[] = [];
 
 
   ngOnInit() {
@@ -52,6 +51,10 @@ export class ExpositorLibrosComponent {
   cambiaLibro() {
     this.librosOfrecidos[0].titulo = 'Abadakadabra';
     this.librosOfrecidos.push(this.librosOfrecidos[0]);
+  }
+
+  gestionaCompra(libro: Libro) {
+    this.librosComprados.push(libro);
   }
 
 
