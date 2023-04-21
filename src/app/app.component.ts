@@ -11,19 +11,12 @@ export class AppComponent {
 
   libroService: LibroService = inject(LibroService);
   configService: ConfigService = inject(ConfigService);
-
+  
   constructor(){
     this.configService.tituloWeb.subscribe(nuevoTituloWeb => {
-      console.log('NUEVO TITULO RECIBIDO')
       this.title = nuevoTituloWeb;
     })
   }
 
-  ngOnInit() {
 
-
-
-
-    this.libroService.miLibroFavorito = 'Crónicas de una muerte anunciada';
-  }
 }

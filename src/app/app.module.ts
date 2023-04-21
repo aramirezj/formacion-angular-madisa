@@ -9,7 +9,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CreacionLibroComponent } from './creacion-libro/creacion-libro.component';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './guards/auth.guard';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartaLibroComponent } from './carta-libro/carta-libro.component';
 import { LibroService } from './services/libro.service';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,11 @@ import { LibroService } from './services/libro.service';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    MatInputModule
+    MatInputModule,
+    NgxSpinnerModule,
+    HttpClientModule
   ],
-  providers: [AuthGuard, LibroService],
+  providers: [LibroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

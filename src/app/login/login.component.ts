@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -19,17 +19,20 @@ export class LoginComponent implements OnInit {
 
   libroService:LibroService =  inject(LibroService);
   configService:ConfigService =  inject(ConfigService);
-
-  
+  changeDetectorRef:ChangeDetectorRef = inject(ChangeDetectorRef);
+  constructor(){
+    this.configService.tituloWeb.next('Inicio de sesión');
+  }
 
   ngOnInit() {
-    this.configService.tituloWeb.next('Inicio de sesión');
-
+    
     this.formularioLogin = new FormGroup({
       correo: new FormControl(null, [Validators.email, Validators.required]),
       contra: new FormControl(null, Validators.required)
     })
   }
+
+
 
   iniciarSesion() {
 

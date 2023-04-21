@@ -19,21 +19,22 @@ export class ExpositorLibrosComponent {
 
   libroService:LibroService =  inject(LibroService);
   configService:ConfigService =  inject(ConfigService);
-  ngOnInit() {
-    this.configService.tituloWeb.next('Expositor de libros');
 
+  constructor(){
+    this.configService.tituloWeb.next('Expositor de libros');
+  }
+  ngOnInit() {
+
+    this.libroService.recuperarLibros().subscribe(librosBBDD => {
+      console.log(librosBBDD);
+      this.librosOfrecidos = librosBBDD;
+    })
 
     this.libroService.miLibroFavorito = 'El relato de un naufrago';
 
-    /*this.recuperarLibrosPromesa().then(librosBBDD => {
-      this.librosOfrecidos = librosBBDD;
-    }) */
-    this.recuperarLibrosObservable().subscribe(librosBBDD => {
-      this.librosOfrecidos = librosBBDD;
-    });
+
 
   }
-
 
   /**
    * Cambia el modo elegido
@@ -70,73 +71,6 @@ export class ExpositorLibrosComponent {
 
 
 
-
-  recuperarLibrosPromesa(): Promise<Libro[]> {
-    return new Promise<Libro[]>((resolve, reject) => {
-      //CÓDIGO A EJECUTAR, CUANDO ALGUIEN SOLICITE LA PROMESA
-      setTimeout(() => {
-        //CÓDIGO A EJECUTAR
-        const libro1: Libro = {
-          titulo: 'Cien años de soledad',
-          cantidadPaginas: 550,
-          autor: 'Gabriel Garcia Marquez',
-          stock: 10,
-          precio: 7
-        }
-        const libro2: Libro = {
-          titulo: 'Cronicas de una muerte anunciada',
-          cantidadPaginas: 150,
-          autor: 'Gabriel Garcia Marquez',
-          stock: 15,
-          precio: 10
-        }
-        const libro3: Libro = {
-          titulo: 'El lazarillo de tormes',
-          cantidadPaginas: 150,
-          stock: 15,
-          precio: 10
-        }
-
-        const librosBBDD: Libro[] = [libro1, libro2, libro3];
-        resolve(librosBBDD);
-      }, 2000);
-
-    });
-  }
-
-  recuperarLibrosObservable(): Observable<Libro[]> {
-    return new Observable<Libro[]>(observer => {
-      setTimeout(() => {
-        const libro1: Libro = {
-          titulo: 'Cien años de soledad',
-          cantidadPaginas: 550,
-          autor: 'Gabriel Garcia Marquez',
-          stock: 10,
-          precio: 7
-        }
-        const libro2: Libro = {
-          titulo: 'Cronicas de una muerte anunciada',
-          cantidadPaginas: 150,
-          autor: 'Gabriel Garcia Marquez',
-          stock: 15,
-          precio: 10
-        }
-        const libro3: Libro = {
-          titulo: 'El lazarillo de tormes',
-          cantidadPaginas: 150,
-          stock: 15,
-          precio: 10
-        }
-
-        const librosBBDD: Libro[] = [libro1, libro2, libro3];
-
-        observer.next(librosBBDD);
-        observer.complete();
-
-
-      }, 2000)
-    });
-  }
 
 
 }
