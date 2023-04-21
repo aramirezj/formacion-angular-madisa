@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartaLibroComponent } from './carta-libro/carta-libro.component';
+import { LibroService } from './services/libro.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { CartaLibroComponent } from './carta-libro/carta-libro.component';
     MatSnackBarModule,
     MatInputModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, LibroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

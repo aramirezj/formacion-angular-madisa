@@ -5,9 +5,16 @@
     <p> {{librosComprados.length}} unidades compradas</p>
 </div>
 
+<h3>Libros comprados:</h3>
+<div class="cards">
+    <app-carta-libro *ngFor="let libro of librosComprados" (sacar)="sacarLibro(libro)" [libro]="libro" [estaEnCarrito]="true"/>
+</div>
+
 
 <button (click)="cambiaLibro()">Cambiar</button>
 
+
+<h3>Cátalogo de libros</h3>
 <div class="cards">
     <app-carta-libro *ngFor="let libro of librosOfrecidos" [libro]="libro" (comprado)="gestionaCompra($event)" />
 </div>

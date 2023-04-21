@@ -8,9 +8,14 @@ import { Libro } from '../interfaces/Libro';
 })
 export class CartaLibroComponent {
   @Input() libro: Libro;
+  @Input() estaEnCarrito: boolean;
   @Output() comprado: EventEmitter<Libro> = new EventEmitter();
-
+  @Output() sacar: EventEmitter<void> = new EventEmitter();
   comprar() {
     this.comprado.emit(this.libro);
+  }
+
+  sacarLibro() {
+    this.sacar.emit();
   }
 }
