@@ -12,6 +12,8 @@
         <button mat-raised-button color="primary" (click)="comprar()">Comprar</button>
         <button mat-raised-button color="accent">Añadir</button>
         <button mat-raised-button color="warn">Restar</button>
+        <button mat-raised-button color="warn" (click)="borrarBoton()">Borrar</button>
+        <button mat-raised-button color="accent" (click)="editarLibro()">Editar</button>
     </mat-card-actions>
 
     <mat-card-actions *ngIf="estaEnCarrito">

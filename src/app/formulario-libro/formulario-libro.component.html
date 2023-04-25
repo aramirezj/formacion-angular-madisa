@@ -1,32 +1,32 @@
-<h1>Formulario de creación de libro</h1>
+<h1>Formulario de {{formularioLibro.value.id ? 'edición' : 'creación'}} de libro</h1>
 
-<form [formGroup]="formularioCreacion">
+<form [formGroup]="formularioLibro">
     <mat-form-field>
         <mat-label>Titulo</mat-label>
         <input matInput formControlName="titulo">
-      
     </mat-form-field>
     <mat-form-field>
         <mat-label>Cantidad páginas</mat-label>
         <input matInput formControlName="cantidadPaginas">
-      
+
     </mat-form-field>
     <mat-form-field>
         <mat-label>Autor</mat-label>
         <input matInput formControlName="autor">
-      
+
     </mat-form-field>
     <mat-form-field>
         <mat-label>Stock</mat-label>
         <input matInput formControlName="stock">
-      
+
     </mat-form-field>
     <mat-form-field>
         <mat-label>Precio</mat-label>
         <input matInput formControlName="precio">
-      
+
     </mat-form-field>
-    <button mat-raised-button color="primary" type="button" (click)="crearLibro()" [disabled]="formularioCreacion.invalid">Crear libro</button>
+    <button mat-raised-button color="primary" type="button" (click)="guardarLibro()"
+        [disabled]="formularioLibro.invalid">Guardar libro</button>
 </form>
 
 <app-carta-libro *ngIf="libroBBDD" [libro]="libroBBDD" />

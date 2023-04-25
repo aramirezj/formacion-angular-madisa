@@ -2,10 +2,10 @@
   "libros": [
     {
       "id": 1,
-      "titulo": "Cien de años soledad",
-      "cantidadPaginas": 10,
+      "titulo": "Mil de años soledad",
+      "cantidadPaginas": "28",
       "autor": "Gabriel Garcia Marquez",
-      "stock": 15,
+      "stock": "50",
       "precio": 20
     },
     {
@@ -38,22 +38,6 @@
       "autor": "gabriel",
       "stock": "4",
       "precio": "33"
-    },
-    {
-      "id": 6,
-      "titulo": "hola",
-      "cantidadPaginas": "5",
-      "autor": "miAutor",
-      "stock": "5",
-      "precio": "10"
-    },
-    {
-      "id": 7,
-      "titulo": "dwad",
-      "cantidadPaginas": "dwadaw",
-      "autor": "awdawd",
-      "stock": "awdaw",
-      "precio": "dawd"
     }
   ]
 }

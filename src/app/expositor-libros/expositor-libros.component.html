@@ -7,7 +7,8 @@
 
 <h3>Libros comprados:</h3>
 <div class="cards">
-    <app-carta-libro *ngFor="let libro of librosComprados" (sacar)="sacarLibro(libro)" [libro]="libro" [estaEnCarrito]="true"/>
+    <app-carta-libro *ngFor="let libro of librosComprados" (sacar)="sacarLibro(libro)" [libro]="libro"
+        [estaEnCarrito]="true" />
 </div>
 
 
@@ -16,7 +17,8 @@
 
 <h3>Cátalogo de libros</h3>
 <div class="cards">
-    <app-carta-libro *ngFor="let libro of librosOfrecidos" [libro]="libro" (comprado)="gestionaCompra($event)" />
+    <app-carta-libro *ngFor="let libro of librosOfrecidos" [libro]="libro"
+     (comprado)="gestionaCompra($event)" (borrar)="borrarLibro(libro)" />
 </div>
 
 

@@ -7,7 +7,7 @@ import { ExpositorLibrosComponent } from './expositor-libros/expositor-libros.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { CreacionLibroComponent } from './creacion-libro/creacion-libro.component';
+import { FormularioLibroComponent } from './formulario-libro/formulario-libro.component';
 import { LoginComponent } from './login/login.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -25,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     ExpositorLibrosComponent,
-    CreacionLibroComponent,
+    FormularioLibroComponent,
     LoginComponent,
     CartaLibroComponent
   ],

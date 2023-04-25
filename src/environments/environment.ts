@@ -1,3 +1,3 @@
 export const environment = {
-    api:'miPaginaweb/api'
+    api:'https://www.miMaquinaDeProduccion.com/'
 };
