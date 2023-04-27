@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { LibroService } from './services/libro.service';
 import { ConfigService } from './services/config.service';
 @Component({
   selector: 'app-root',
@@ -9,7 +8,6 @@ import { ConfigService } from './services/config.service';
 export class AppComponent {
   title:string | undefined;
 
-  libroService: LibroService = inject(LibroService);
   configService: ConfigService = inject(ConfigService);
   
   constructor(){

@@ -1,6 +1,5 @@
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { LibroService } from './libro.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class LoginService {
     if (haIniciadoSesion) {
       return true;
     } else {
-      this.router.navigateByUrl('login');
+      this.router.navigateByUrl('usuario/login');
       return false;
     }
   }

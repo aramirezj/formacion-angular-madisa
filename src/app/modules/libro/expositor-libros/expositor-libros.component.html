@@ -17,10 +17,14 @@
 
 <h3>Cátalogo de libros</h3>
 <div class="cards">
-    <app-carta-libro *ngFor="let libro of librosOfrecidos" [libro]="libro"
-     (comprado)="gestionaCompra($event)" (borrar)="borrarLibro(libro)" />
+    <app-carta-libro *ngFor="let libro of librosOfrecidos" [libro]="libro" (comprado)="gestionaCompra($event)"
+        (borrar)="borrarLibro(libro)" />
 </div>
 
 
 <button (click)="cambiarModo('Comprar')">Comprar</button>
 <button (click)="cambiarModo('Consultar')">Consultar</button>
+
+<app-tabla-generica [datos]="librosOfrecidos"
+    [columnas]="['Título','Autor','Cantidad Páginas','Precio','Stock']"
+    [modelo]="['titulo','autor','cantidadPaginas','precio','stock']"></app-tabla-generica>

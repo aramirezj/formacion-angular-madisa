@@ -3,49 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ExpositorLibrosComponent } from './expositor-libros/expositor-libros.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { FormularioLibroComponent } from './formulario-libro/formulario-libro.component';
-import { LoginComponent } from './login/login.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { CartaLibroComponent } from './carta-libro/carta-libro.component';
-import { LibroService } from './services/libro.service';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ExpositorLibrosComponent,
-    FormularioLibroComponent,
-    LoginComponent,
-    CartaLibroComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatSnackBarModule,
-    MatInputModule,
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
-  providers: [LibroService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

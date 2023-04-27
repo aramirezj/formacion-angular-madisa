@@ -1,33 +1,15 @@
-import { NgModule, inject } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExpositorLibrosComponent } from './expositor-libros/expositor-libros.component';
-import { FormularioLibroComponent } from './formulario-libro/formulario-libro.component';
-import { LoginComponent } from './login/login.component';
-import { LoginService } from './services/login.service';
 
 const routes: Routes = [
   {
-    path: 'expositor',
-    component: ExpositorLibrosComponent,
-    title: 'Expositor de libros'
+    path: 'usuario',
+    loadChildren: () => import('./modules/usuario/usuario.module').then(m => m.UsuarioModule)
   },
   {
-    path: 'creacion',
-    component: FormularioLibroComponent,
-    title: 'Creación de libros',
-    canActivate: [() => inject(LoginService).IsLogged()]
-  },
-  {
-    path: 'edicionLibro/:id',
-    component: FormularioLibroComponent,
-    title: 'Edición de libros',
-    canActivate: [() => inject(LoginService).IsLogged()]
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    title: 'Iniciar sesión'
-  },
+    path: 'libro',
+    loadChildren: () => import('./modules/libro/libro.module').then(m => m.LibroModule)
+  }
 ];
 
 @NgModule({

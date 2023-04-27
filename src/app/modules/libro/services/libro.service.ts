@@ -1,16 +1,14 @@
 import { Injectable, inject } from '@angular/core';
-import { LoginService } from './login.service';
 import { Observable } from 'rxjs';
-import { Libro } from '../interfaces/Libro';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Libro } from 'src/app/modules/libro/interfaces/Libro';
 
 @Injectable()
 export class LibroService {
   miLibroFavorito: string = 'Cien años de soledad';
-  loginService: LoginService = inject(LoginService);
   spinner: NgxSpinnerService = inject(NgxSpinnerService);
   httpClient: HttpClient = inject(HttpClient);
   notificacion: MatSnackBar = inject(MatSnackBar);
